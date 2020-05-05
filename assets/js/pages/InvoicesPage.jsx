@@ -1,8 +1,9 @@
-import moment from "moment";
 import React, { useEffect, useState } from 'react';
 import Pagination from '../components/Pagination';
-import invoicesAPI from '../services/invoicesAPI';
+import axios from "axios";
+import moment from "moment";
 
+import invoicesAPI from '../services/invoicesAPI';
 
 const STATUS_CLASSES = {
     PAID: "success",
@@ -59,7 +60,7 @@ const InvoicesPage = (props) => {
         }
     };
 
-    // Gestion du format de date
+    // Gestion du format de la date
     const formatDate = (str) => moment(str).format('DD/MM/YYYY');
 
     // Gestion de la recherche
